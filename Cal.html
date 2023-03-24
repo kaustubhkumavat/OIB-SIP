@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" style =""class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Calculator (Insternship - OASIS INFOBYTE)</title>
+        <h1><p align="center">--- C A L C U L A T O R ---</align></h1></p>
+        <link href="C:\Users\hp\Downloads\Oasis (Web Development)\Oasis (Web Development)\cal.css" rel="stylesheet" type="text/css">
+        <script src="C:\Users\hp\Downloads\Oasis (Web Development)\Oasis (Web Development)\cal2.js"></script>
+        <script src="C:\Users\hp\Downloads\Oasis (Web Development)\Oasis (Web Development)\cal3.js"></script>
+        <script src="C:\Users\hp\Downloads\Oasis (Web Development)\Oasis (Web Development)\cal4.js"></script>
+        <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js></script>
+        <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js></script>
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title"></p>
+                </div>
+                <div class="float-right">
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            
+            <section class="content-wrapper main-content clear-fix">
+                <!-- <script>
+                    // Function that display value
+                    function dis(val) {
+                        document.getElementById("result").value += val
+                    }
+              
+                    function myFunction(event) {
+                        if (event.key == '0' || event.key == '1' 
+                            || event.key == '2' || event.key == '3'
+                            || event.key == '4' || event.key == '5' 
+                            || event.key == '6' || event.key == '7'
+                            || event.key == '8' || event.key == '9' 
+                            || event.key == '+' || event.key == '-'
+                            || event.key == '*' || event.key == '/')
+                            document.getElementById("result").value += event.key;
+                    }
+              
+                    var cal = document.getElementById("calcu");
+                    cal.onkeyup = function (event) {
+                        if (event.keyCode === 13) {
+                            console.log("Enter");
+                            let x = document.getElementById("result").value
+                            console.log(x);
+                            solve();
+                        }
+                    }
+              
+                    // Function that evaluates the digit and return result
+                    function solve() {
+                        let x = document.getElementById("result").value
+                        let y = math.evaluate(x)
+                        document.getElementById("result").value = y
+                    }
+              
+                    // Function that clear the display
+                    function clr() {
+                        document.getElementById("result").value = ""
+                    }
+                </script> -->
+
+<hgroup class="title">
+</hgroup>
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,inital-scale=1">
+
+
+
+
+    
+    <div class="cal">
+        <div class="bg">
+            <div class="display">
+                <p id="display"></p>
+            </div>
+
+            <div class="buttons">
+                <button onclick="getInputValue()">C</button>
+                <button onclick="getInputValue()">%</button>
+                <button onclick="getInputValue()">DEL</button>
+                <button onclick="getInputValue()">/</button><br>
+                <button onclick="getInputValue()">7</button>
+                <button onclick="getInputValue()">8</button>
+                <button onclick="getInputValue()">9</button>
+                <button onclick="getInputValue()">*</button><br>
+                <button onclick="getInputValue()">4</button>
+                <button onclick="getInputValue()">5</button>
+                <button onclick="getInputValue()">6</button>
+                <button onclick="getInputValue()">-</button><br>
+                <button onclick="getInputValue()">1</button>
+                <button onclick="getInputValue()">2</button>
+                <button onclick="getInputValue()">3</button>
+                <button onclick="getInputValue()">+</button><br>
+                <button onclick="getInputValue()">00</button>
+                <button onclick="getInputValue()">0</button>
+                <button onclick="getInputValue()">.</button>
+                <button class="equalto" onclick="getInputValue()">=</button>
+            </div>
+        </div>
+    </div>
+
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        
+    }
+    .bg {
+        border-radius: 37px;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff);
+        box-shadow: 27px 27px 66px #8c8c8c, -27px -27px 66px #ffffff;
+        padding: 30px 30px 30px 30px;
+    }
+    .buttons button{
+        margin-right: 6px;
+        margin-bottom: 6px;
+        width: 70px;
+        height:70px;
+        color: rgb(3,1,133);
+        background-color: rgb(0, 148, 255);
+        border-radius: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        border: none ;
+        box-shadow: rgba(0,0,0,0.19) 0px 10px 20px, rgba(0,0,0,0.23) 0px 6px 6px;
+        transition: 0.2s ease-in-out;
+    }
+    .buttons button:hover{
+        background-color: purple;
+        color: aliceblue;
+    }
+    .cal{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 8em;
+    }
+    .cal span{
+        font-size: 16px;
+    }
+    .cal .display{
+        background-color: rgb(212,194,255);
+        border: 3px solid rgb(212,194,255);
+        width: 96.3%;
+        border-radius: 9px;
+        height: 60px;
+        margin-bottom: 8px;
+        justify-content: center;
+        align-items:center;
+        box-shadow: rgba(0, 0, 0,0.15) 0px 5px 15px, rgba(0,0,0,0.15) 0px 6px 6px;
+        font-size: 25px;
+        line-height: 60px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(250,245,255);
+        letter-spacing: 2px;
+    }
+    .display:hover{
+        background-color: aliceblue;
+    }
+
+
+</style>
+
+<script src="C:\Users\hp\Downloads\Oasis (Web Development)\Oasis (Web Development)\cal.js">
+    
+</script>
+
+<article>
+    <p>
+    </p>
+
+</article>
+
+
+            </section>
+        </div>
+        <div class="footer-basic">
+            <footer>
+                
+            </footer>
+        </div>
+      <style>
+          .footer-basic{
+          }
+          .smd {
+              padding: 2px 2px 2px 2px;
+              margin-left: 5px;
+              border-radius: 50%;
+              background: linear-gradient(145deg, #ffffff, #e6e6e6);
+              box-shadow: 8px 8px 20px #666666, -8px -8px 20px #ffffff;
+          }
+          .copyright {
+              font-size:medium;
+           
+              color:black;
+              font-style:oblique;
+          }
+      </style>
+            
+        
+    
+</body></html>
